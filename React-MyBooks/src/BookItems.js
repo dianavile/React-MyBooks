@@ -3,17 +3,16 @@ import React from "react";
 export default class BookItems extends React.Component {
     render() {
         const { book, handleChange } = this.props;
+        const style = {
+            width: 128,
+            height: 193,
+            backgroundImage: `url(${book.imageLinks ? book.imageLinks.thumbnail : ""})`
+        }
     return (
       <div className="book">
         <div className="book-top">
-          <div
-            className="book-cover"
-            style={{
-              width: 128,
-              height: 193,
-              backgroundImage: `url(${book.imageLinks ? book.imageLinks.thumbnail : ""})`
-            }}
-          />
+          <div className="book-cover"
+              style={style}/>
           <div className="book-shelf-changer">
 
           <select onChange={(event)=>handleChange(book, event.target.value)}>
