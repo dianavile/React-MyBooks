@@ -3,16 +3,17 @@ import React from "react";
 export default class BookPage extends React.Component {
     render() {
         const { book, handleChange } = this.props;
+        const style = {
+                width: 128,
+                height: 193,
+                backgroundImage: `url(${book.imageLinks ? book.imageLinks.thumbnail : ""})`
+              }
     return (
       <div className="book">
         <div className="book-top">
           <div
             className="book-cover"
-            style={{
-              width: 128,
-              height: 193,
-              backgroundImage: `url(${book.imageLinks ? book.imageLinks.thumbnail : ""})`
-            }}
+            style={style}
           />
           <div className="book-shelf-changer">
 
