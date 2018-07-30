@@ -16,7 +16,7 @@ class BooksApp extends React.Component {
       showSearchPage: false
     };
   }
-
+   
   fetchAllBook() {
     BooksAPI.getAll().then(books => {
       this.setState({ Books: books });
@@ -69,18 +69,30 @@ class BooksApp extends React.Component {
   }
 
   handleChange = (book, shelf) => {
-    BooksAPI.update(book, shelf);
-    BooksAPI.getAll().then((books) => {
+    book.shelf = shelf
+    BooksAPI.update(book, shelf).then((books) => {
       this.setState({ Books: books })
     })
   }
 
+  /*
+  handlechange = (book, shelf) => {
+    book.shelf = shelf
+    BooksAPI.update(book, shelf).then(() => {
+      this.setState(state => ({
+        books: state.book
+          .filter(b => b.id !== book)
+          .concat(book)
+      }))
+    }
+    )
+  };
+*/
+
   render() {
     return (
       <div className="app">
-        <Route
-          path="/search"
-          render={() => (
+        <Route path = {process.env.PUBLIC_URL + "/search"} render = {() => (
             <SearchBooks
               book={this.state.book}
               books={this.state.Searched}
@@ -90,10 +102,7 @@ class BooksApp extends React.Component {
             />
           )}
         />
-        <Route
-          exact
-          path="/"
-          render={() => (
+        < Route exact path = {process.env.PUBLIC_URL + "/"} render = {() => (
             <div className="list-books">
               <div className="list-books-title">
                 <h1>MyReads</h1>
@@ -115,10 +124,10 @@ class BooksApp extends React.Component {
                     shelf="read"
                     handleChange={this.handleChange}
                   />
-                </div>
+              </div>
               </div>
               <div className="open-search">
-                <Link to="/search" className="add-books" />
+                <Link to={process.env.PUBLIC_URL + "/search"}>Add a book</Link>
               </div>
             </div>
           )}
