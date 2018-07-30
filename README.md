@@ -31,7 +31,8 @@ To get started developing:
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 
-or visit live version of the project: https://dianavile.github.io/React-MyBooks/
+## Live Version 
+Visit the live version of the project: https://dianavile.github.io/React-MyBooks/.
 
 ## Filestructure
 ```
