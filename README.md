@@ -27,12 +27,9 @@ Google Front-End Web Developer Nanodegree Scholarship at Udacity.
 ## Installation & Start Project
 
 To get started developing:
-* clone or download the project
+* clone or download the project from within React/MyBooks file.
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
-
-## Live Version 
-Visit the live version of the project: https://dianavile.github.io/React-MyBooks/.
 
 ## Filestructure
 ```
