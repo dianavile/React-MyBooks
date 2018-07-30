@@ -15,15 +15,13 @@ export default class BookItems extends React.Component {
               style={style}/>
           <div className="book-shelf-changer">
 
-          <select onChange={(event)=>handleChange(book, event.target.value)}>
-              <option value="move" disabled>
-                Move to...
-              </option>
-              <option value="currentlyReading" selected={book.shelf === "currentlyReading"}>Currently Reading</option>
-              <option value="wantToRead" selected={book.shelf === "wantToRead"}>Want to Read</option>
-              <option value="read" selected={book.shelf === "read"}>Read</option>
-              <option value="none" selected={book.shelf === "none" || book.shelf === undefined}>None</option>
-            </select>
+          <select value={book.shelf} onChange={(event)=>handleChange(book, event.target.value)}>
+             <option value="none" disabled>Move to...</option>
+             <option value="currentlyReading">Currently Reading</option>
+             <option value="wantToRead">Want to Read</option>
+             <option value="read">Read</option>
+             <option value="none">None</option>
+           </select>
           </div>
         </div>
         <div className="book-title">{book.title}</div>
