@@ -23,59 +23,15 @@ class BooksApp extends React.Component {
     this.fetchAllBook();
   }
 
-  handleSearch = query => {
-    if (query) {
-      BooksAPI.search(query).then(books => {
-        if (books.error) {
-          this.setState({ Searched: [] });
-        } else {
-          this.setState({ Searched: books });
-        }
-      });
-    } else {
-      this.setState({ Searched: [] });
-    }
-  };
-
-
-  syncShelf = (book) => {
-    let matchingShelf = this.state.Books.filter(Book =>
-      book.id === Book.id
-    )
-    return matchingShelf.length ? matchingShelf[0].shelf : undefined
-  }
-
-  updateSearchedBooks = (query) => {
-    let searchedBooksShelf
-    if (query) {
-      BooksAPI.search(query).then(books => {
-        if (books.error) {
-          this.setState({ Searched: [] })
-        } else {
-          searchedBooksShelf = books.map(book => {
-            book.shelf = this.syncShelf(book);
-            return book;
-          })
-          this.setState({ Searched: searchedBooksShelf })
-        }
-      })
-    } else {
-      this.setState({ Searched: [] })
-    }
-  }
-
   handleChange = (book, shelf) => {
-	  console.log("handleChange");
     book.shelf = shelf
     BooksAPI.update(book, shelf).then(() => {
       this.setState(state => ({
-        books: [book].filter(b => b.id !== book)
-          .concat(book)
+        books: [book].filter(b => b.id !== book).concat(book)
       }))
     }
     )
   };
-  
 
   /* This method verifies if the book is the library. If not, then the book is added directly.
      If book is in library, only update the property shelf of the book.
@@ -109,12 +65,8 @@ class BooksApp extends React.Component {
       <div className="app">
         <Route path = {process.env.PUBLIC_URL + "/search"} render = {() => (
             <SearchBooks
-              book={this.state.book}
-              books={this.state.Searched}
-              handleSearch={this.handleSearch}
-              handleChange={this.handleChange}
-              updateSearchedBooks={this.updateSearchedBooks}
-			  updateListBooks={this.updateListBooks}
+              books={this.state.Books}
+	      updateListBooks={this.updateListBooks}
             />
           )}
         />
