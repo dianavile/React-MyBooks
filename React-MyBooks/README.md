@@ -26,7 +26,7 @@ This code is created with the starter template for MyReads (project 7) for Googl
 ## Installation & Start Project
 
 To get started developing:
-* clone or download the project from within React/MyBooks file.
+* clone or download the project from within __React/MyBooks__ file.
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 
