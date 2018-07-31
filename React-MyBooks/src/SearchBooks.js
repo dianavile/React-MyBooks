@@ -77,7 +77,7 @@ export default class SearchBooks extends Component {
           <ol className="books-grid">
             {this.state.Searched.map(book => (
               <li key={book.id}>
-		 <BookPage book={book} option={"eventForListSearchPage"} updateListBooks={updateListBooks} />
+		 <BookPage book={book} option={"eventForListSearchPage"} updateListBooks={updateListBooks} books={books} />
               </li>
             ))}
           </ol>
