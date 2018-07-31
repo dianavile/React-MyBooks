@@ -90,21 +90,21 @@ class BooksApp extends React.Component {
             />
           )}
         />
-        < Route exact path = {process.env.PUBLIC_URL + "/"} render = {() => (
+        <Route exact path = {process.env.PUBLIC_URL + "/"} render = {() => (
             <div className="list-books">
               <div className="list-books-title">
                 <h1>MyReads</h1>
               </div>
               <div className="list-books-content">
-                  <Shelf  books = {this.state.Books.filter(b => b.shelf === 'currentlyReading')}
-                          shelf = "Currently Reading"
-                          handleChange = {this.handleChange}/> 
-                  < Shelf books = {this.state.Books.filter(b => b.shelf === 'wantToRead')}
-                          shelf = "Want To Read"
-                          handleChange = {this.handleChange}/> 
-                  < Shelf books = {this.state.Books.filter(b => b.shelf === 'read')}
-                          shelf = "Read"
-                          handleChange = {this.handleChange}/>
+                  <Shelf books = {this.state.Books.filter(b => b.shelf === 'currentlyReading')}
+                        shelf = "Currently Reading"
+                        handleChange = {this.handleChange}/> 
+                  <Shelf books = {this.state.Books.filter(b => b.shelf === 'wantToRead')}
+                        shelf = "Want To Read"
+                        handleChange = {this.handleChange}/> 
+                  <Shelf books = {this.state.Books.filter(b => b.shelf === 'read')}
+                        shelf = "Read"
+                        handleChange = {this.handleChange}/>
               </div>
               <div className="open-search">
                 <Link to={process.env.PUBLIC_URL + "/search"}>Add a book</Link>
