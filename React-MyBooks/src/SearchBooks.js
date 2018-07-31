@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import BookPage from "./BookPage";
+import * as BooksAPI from "./BooksAPI";
 
 export default class SearchBooks extends Component {
 	constructor(props) {
