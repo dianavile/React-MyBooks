@@ -1,5 +1,5 @@
-# MyReads Project
-This code is created with the starter template for MyReads project for Udacity's Front End Nanodegree course. 
+# React-MyBooks Project
+This code is created with the starter template for MyReads (project 7) for Google Front-End Web Developer Nanodegree Scholarship at Udacity.
 
 # MyReads Goals
 * Add interactivity to the static app in CSS and HTML markup
@@ -13,10 +13,20 @@ This code is created with the starter template for MyReads project for Udacity's
 * Identify the state and the state position, Add the State to creative dynamic components.
 * Check if data flows correctly: one way direction from parent to child.
 
+### My Reads Functionality
+- My Reads is a bookshelf app to select & categorize books. 
+- The main page displays a list of three "shelves" (categories):
+  - Currently Reading
+  - Want to Read
+  - Read
+- Each self contains a number of books.
+- Each book contains a control to select the shelf.
+- The Default value for the control is the current shelf the book is in.
+
 ## Installation & Start Project
 
 To get started developing:
-
+* clone or download the project from within React/MyBooks file.
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 
@@ -46,48 +56,31 @@ To get started developing:
   ├── README.md 
   ├── SEARCH_TERMS.md
 ```
-
 ## Backend Server
 The project comes with a given backend server to develop against. 
 The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods you will need to perform necessary operations on the backend:
 * [`getAll`](#getall)
-* [`update`](#update)
-* [`search`](#search)
-
-### `getAll`
-Method Signature:
-```js
-getAll()
-```
-* Returns a Promise which resolves to a JSON object containing a collection of book objects.
+  Returns a Promise which resolves to a JSON object containing a collection of book objects.
 * This collection represents the books currently in the bookshelves in your app.
-
-### `update`
-Method Signature:
-
-```js
-update(book, shelf)
-```
-* book: `<Object>` containing at minimum an `id` attribute
+* [`update`](#update):update(book, shelf)
+* book: `<Object>` contains an `id` attribute
 * shelf: `<String>` contains one of ["wantToRead", "currentlyReading", "read"]  
 * Returns a Promise which resolves to a JSON object containing the response data of the POST request
-
-### `search`
-Method Signature:
-```js
-search(query)
-```
+* [`search`](#search): search(query)
 * query: `<String>`
 * Returns a Promise which resolves to a JSON object containing a collection of a maximum of 20 book objects.
-* These books do not know which shelf they are on. They are raw results only. You'll need to make sure that books have the correct state while on the search page.
+* These books do not know which shelf they are on. Books need to have the correct state while on the search page.
 
 ## Important
 The backend API uses a fixed set of cached search results and is limited to a particular set of search terms, which can be found in [SEARCH_TERMS.md](SEARCH_TERMS.md). That list of terms are the _only_ terms that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't come back with any results.
 
 ### Code dependencies
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+- This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). 
+- More information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
-The project further uses the following code dependencies
+- The project is based on the [Udacity starter code] (https://github.com/udacity/reactnd-project-myreads-starter)
+
+And further uses the following __code dependencies__:
  * "prop-types": "^15.6.1",
  * "react": "^16.3.2",
  * "react-dom": "^16.3.2"
@@ -96,3 +89,6 @@ The project further uses the following code dependencies
  * build": "react-scripts build
  * test": "react-scripts test --env=jsdom
  * eject": "react-scripts eject
+ 
+ 
+
