@@ -83,15 +83,13 @@ class BooksApp extends React.Component {
      If book is in library, only update the property shelf of the book.
   */
   isBookOnShelf(bookFromSearchPage) {
-    return this.state.Books.filter(book => book.id === bookFromSearchPage.id);
-	  updateListBooks={this.updateListBooks};
+    return this.state.Books.filter(book => book.id === bookFromSearchPage.id);	  
   }
 
   updateListBooks = (bookFromSearchPage, value) => {
     //const bookSearch = bookFromSearchPage;
     BooksAPI.update(bookFromSearchPage, value).then(() => {
-	  let book = this.isBookOnShelf(bookFromSearchPage);
-	     updateListBooks={this.updateListBooks};
+	  let book = this.isBookOnShelf(bookFromSearchPage);	    
 	
 	  this.setState(state => {
 	    if (book.length === 0) {
