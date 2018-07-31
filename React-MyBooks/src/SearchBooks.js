@@ -17,7 +17,7 @@ export default class SearchBooks extends Component {
   render() {
     const { searchQuery } = this.state;
 
-    const { books, updateSearchedBooks, handleChange } = this.props;
+    const { books, updateListBooks, handleChange } = this.props;
     return (
       <div className="search-books">
         <div className="search-books-bar">
@@ -28,9 +28,7 @@ export default class SearchBooks extends Component {
 						type="text"
 						placeholder="Search Books..."
 						value={searchQuery}
-						onChange={(event) => 
-							this.updateQuery(event.target.value)
-						}
+						onChange={(event) => this.updateQuery(event.target.value)}
 					/>
           </div>
         </div>
@@ -38,7 +36,7 @@ export default class SearchBooks extends Component {
           <ol className="books-grid">
             {books.map(book => (
               <li key={book.id}>
-                <BookPage book={book} handleChange={handleChange} updateSearchedBooks={updateSearchedBooks} />
+                <BookPage book={book} handleChange={handleChange} option={"eventForListSearchPage"} updateListBooks={updateListBooks} />
               </li>
             ))}
           </ol>
