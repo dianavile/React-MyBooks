@@ -17,7 +17,7 @@ export default class SearchBooks extends Component {
   render() {
     const { searchQuery } = this.state;
 
-    const { books, updateListBooks, handleChange } = this.props;
+   const { books, updateListBooks, handleChange } = this.props;
     return (
       <div className="search-books">
         <div className="search-books-bar">
