@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import BookItems from "./BookItems";
+import BookPage from "./BookPage";
 
 export default class SearchBooks extends Component {
 	constructor(props) {
@@ -38,7 +38,7 @@ export default class SearchBooks extends Component {
           <ol className="books-grid">
             {books.map(book => (
               <li key={book.id}>
-                <BookItems book={book} handleChange={handleChange} updateSearchedBooks={updateSearchedBooks} />
+                <BookPage book={book} handleChange={handleChange} updateSearchedBooks={updateSearchedBooks} />
               </li>
             ))}
           </ol>
