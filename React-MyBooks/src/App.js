@@ -67,6 +67,7 @@ class BooksApp extends React.Component {
   }
 
   handleChange = (book, shelf) => {
+	  console.log("handleChange");
     book.shelf = shelf
     BooksAPI.update(book, shelf).then(() => {
       this.setState(state => ({
@@ -76,6 +77,33 @@ class BooksApp extends React.Component {
     }
     )
   };
+  
+  /* This method verifies if the book is the library. If not, then the book is added directly.
+     If book is in library, only update the property shelf of the book.
+  */
+  isBookOnShelf(bookFromSearchPage) {
+    return this.state.Books.filter(book => book.id === bookFromSearchPage.id);
+  }
+  
+  updateListBooks = (bookFromSearchPage, value) => {
+    //const bookSearch = bookFromSearchPage;
+    BooksAPI.update(bookFromSearchPage, value).then(() => {
+	  let book = this.isBookOnShelf(bookFromSearchPage);
+	
+	  this.setState(state => {
+	    if (book.length === 0) {
+	      // Add new property shelf to new book added to the list of shelves.
+	      bookFromSearchPage["shelf"] = value;
+		  state.Books.concat(bookFromSearchPage);
+	    }
+	    else {
+	      book[0].shelf = value;
+	    }
+
+        return { Books: state.Books }
+	  });
+    })
+  }
 
   render() {
     return (
@@ -87,6 +115,7 @@ class BooksApp extends React.Component {
               handleSearch={this.handleSearch}
               handleChange={this.handleChange}
               updateSearchedBooks={this.updateSearchedBooks}
+			  updateListBooks={this.updateListBooks}
             />
           )}
         />
