@@ -43,21 +43,9 @@ export default class SearchBooks extends Component {
 		}
       }
 	
-   existBooksOnQueryResult(books) {
-	for (let bookFromSearch of this.state.Searched) {
-		for (const book of books) {
-			if (bookFromSearch.id === book.id) {
-				bookFromSearch.shelf = book.shelf;
-				break;
-			}
-		}
-	}
-  }
-	
   render() {
     const { searchQuery } = this.state;
    const { books, updateListBooks } = this.props;
-   this.existBooksOnQueryResult(books);
 
     return (
       <div className="search-books">
