@@ -1,5 +1,5 @@
 import React from 'react';
-import BookItems from "./BookItems";
+import BookPage from "./BookPage";
 
 class Shelf extends React.Component {
 
@@ -16,7 +16,7 @@ class Shelf extends React.Component {
             <ol className = "books-grid"> {
                 books.map(book => ( 
                     <li key = {book.id}>
-                    <BookItems book = {book} handleChange = {handleChange}/> 
+                    <BookPage book = {book} handleChange = {handleChange}/> 
                     </li>
                 ))} 
                 </ol> 
