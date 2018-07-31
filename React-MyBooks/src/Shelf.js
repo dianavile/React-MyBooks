@@ -16,7 +16,7 @@ class Shelf extends React.Component {
             <ol className = "books-grid"> {
                 books.map(book => ( 
                     <li key = {book.id}>
-                    <BookPage book={book} handleChange = {handleChange} option={"eventForListIndexPage"} /> 
+                    <BookPage book={book} handleChange = {handleChange} option={"eventForListIndexPage"}/>
                     </li>
                 ))} 
                 </ol> 
