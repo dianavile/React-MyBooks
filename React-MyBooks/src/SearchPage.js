@@ -22,16 +22,10 @@ export default class SearchBooks extends Component {
       <div className="search-books">
         <div className="search-books-bar">
         <Link to="/" className="close-search"/>
-          <div className="search-books-input-wrapper">
-					<input
-						className="search-input"
-						type="text"
-						placeholder="Search Books..."
-						value={searchQuery}
-						onChange={(event) => 
-							this.updateQuery(event.target.value)
-						}
-					/>
+        <div className="search-books-input-wrapper">
+	<input
+	    className="search-input" type="text" placeholder="Search Books..." value={searchQuery} onChange={(event) => 
+		this.updateQuery(event.target.value)}/>
           </div>
         </div>
         <div className="search-books-results">
