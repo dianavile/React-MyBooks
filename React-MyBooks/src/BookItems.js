@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class BookItems extends React.Component {
+export default class BookPage extends React.Component {
     render() {
         const { book, handleChange } = this.props;
         const style = {
@@ -11,10 +11,8 @@ export default class BookItems extends React.Component {
     return (
       <div className="book">
         <div className="book-top">
-          <div className="book-cover"
-              style={style}/>
+          <div className="book-cover" style={style}/>
           <div className="book-shelf-changer">
-
           <select value={book.shelf} onChange={(event)=>handleChange(book, event.target.value)}>
              <option value="none" disabled>Move to...</option>
              <option value="currentlyReading">Currently Reading</option>
