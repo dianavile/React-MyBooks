@@ -9,9 +9,7 @@ class BooksApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Books: [],
-      Searched: [],
-      showSearchPage: false
+      Books: []
     };
   }
    
