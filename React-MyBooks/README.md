@@ -90,5 +90,9 @@ And further uses the following __code dependencies__:
  * test": "react-scripts test --env=jsdom
  * eject": "react-scripts eject
  
+ ### Licence
+ See
  
+ ### Contribution
+ As this is an exercise of Udacity´s Front End Nanodegree (with Full Google Scholarship), I will likely not accept contributions.
 
