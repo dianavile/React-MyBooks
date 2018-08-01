@@ -26,7 +26,7 @@ This code is created with the starter template for MyReads (project 7) for Googl
 ## Installation & Start Project
 
 To get started developing:
-* clone or download the project from within __React/MyBooks__ file.
+* clone or download the project from within __React/MyBooks__ folder.
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 
@@ -91,7 +91,7 @@ And further uses the following __code dependencies__:
  * eject": "react-scripts eject
  
  ### Licence
- See
+ The [MIT Licence](https://github.com/dianavile/React-MyBooks/blob/master/LICENSE) is included outside __React/MyBooks__ folder.
  
  ### Contribution
  As this is an exercise of Udacity´s Front End Nanodegree (with Full Google Scholarship), I will likely not accept contributions.
